@@ -3,6 +3,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 
 }
+@font-face {
+    font-family: "iconfont"; 
+    src: url('../ttf/iconfont.ttf') format('truetype');
+  }
+  
 
 .wrapper {
     display: grid;
@@ -18,20 +23,20 @@ body {
     text-align: center;
     justify-items: center;
     border-bottom: 1px solid rgb(172, 177, 183);
+    position: relative;
 }
 
 .wrapper>nav p {
     margin: 0px;
     line-height: 50px;
     font-size: 18px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
 }
 
-.wrapper>nav p~:not(.logo) {
+.wrapper>nav p~:not(.logo):not(.icon) {
     flex-basis: 100px;
     flex-shrink: 1;
     flex-grow: 1;
@@ -40,13 +45,30 @@ body {
 .wrapper>nav .logo {
     font-weight: bold;
 }
-
+.wrapper>nav .icon{
+    
+    color: rgb(172, 177, 183);
+    position: absolute;
+    right: 1vw;
+    
+    display: none;
+  
+} 
+.wrapper>nav .icon:not(.cutLine){
+    font-size:3vw;
+    font-family: iconfont;
+} 
+.wrapper>nav .cutLine{
+    font-weight: initial;
+    
+}
 .wrapper>header {
     grid-area: 2/1/3/4;
     display: flex;
+    position: relative;
     align-items: center;
     justify-items: center;
-    background-color: aqua;
+
 }
 
 .wrapper>header>input {
@@ -57,14 +79,21 @@ body {
     border: none;
     border-bottom: 1px solid rgb(172, 177, 183);
     outline: none;
+    font-size:1.3vw;
 
 }
-
+.wrapper>header>p{
+    font-family: iconfont;
+    color: rgb(172, 177, 183);
+    position: absolute;
+    right: 1vw;
+    font-size:2vw;
+    padding-right: 18px;
+    
+} 
 .wrapper>header>input::-webkit-search-cancel-button {
     display: none;
-
 }
-
 .wrapper>.sidebar {
     grid-area: 3/1/4/3;
     display: grid;
@@ -172,7 +201,7 @@ body {
         padding-left: 18px;
     }
 
-    .wrapper>nav p~:not(.logo) {
+    .wrapper>nav p~:not(.logo):not(.icon) {
         display: none;
     }
     .wrapper>.sidebar>aside>p {
@@ -205,6 +234,32 @@ body {
         font-weight: lighter;
     
     }
+    .wrapper>header>input {
+    
+        font-size:2.5vw;
+    
+    }
+    .wrapper>header>p{
+       
+        font-size:3vw;
+        padding-right: 13px;
+        
+    } 
+    .wrapper>nav .icon{
+        display: block;
+        
+    }
+    .wrapper>nav .menu{
+       margin-right: 60px;
+    }
+
+    .wrapper>nav .shopBag{
+        margin-right: 13px;
+        
+     }
+     .wrapper>nav .cutLine{
+        margin-right: 45px;
+     }
 }
 
 @media (min-width: 768px) {
@@ -216,9 +271,9 @@ body {
         height: 50px;
     }
 
-    .wrapper>header>input {
+    /* .wrapper>header>input {
         font-size: 18px;
-    }
+    } */
     
 }
 
@@ -231,9 +286,9 @@ body {
         height: 60px;
     }
 
-    .wrapper>header>input {
+    /* .wrapper>header>input {
         font-size: 20px;
-    }
+    } */
   
 }
 
@@ -246,9 +301,9 @@ body {
         height: 70px;
     }
 
-    .wrapper>header>input {
+    /* .wrapper>header>input {
         font-size: 25px;
-    }
+    } */
 
    
 
